@@ -19,14 +19,11 @@ class News extends Component {
                 {
                     (this.news.length) ?
                         this.news.map(
-                            newItem => {
-                                return (
-                                    <div className="news-item-wrapper" key={newItem.id}>
-                                        <NewsItem newItem={newItem} />
-                                        <Comments postId={newItem.id} />
-                                    </div>
-                                )
-                            }
+                            newItem =>
+                                <div className="news-item-wrapper" key={newItem.id}>
+                                    <NewsItem newItem={newItem} />
+                                    <Comments postId={newItem.id} />
+                                </div>
                         ) : <div className="news-empty-wrapper">No news</div>
                 }
             </div>

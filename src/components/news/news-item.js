@@ -15,6 +15,6 @@ class NewsItem extends Component {
 
 NewsItem.propTypes = {
     newItem: PropTypes.object.isRequired
-  }
+};
 
 export default NewsItem;
