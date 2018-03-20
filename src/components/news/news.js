@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NewsItem from './news-item';
+import './news.scss'
 import Comments from '../comments/comments';
 
 class News extends Component {

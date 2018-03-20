@@ -1,0 +1,22 @@
+.news-item-wrapper {
+  margin-bottom: 20px;
+  text-align: left;
+
+  &:first-child {
+    margin-top: 20px;
+  }
+
+  .post {
+    padding: 10px 40px;
+  }
+
+  .post-header {
+    display: block;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+
+}

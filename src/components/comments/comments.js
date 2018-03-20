@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Comment from './comment';
-import './comments.css';
+import './comments.scss';
 
 class Comments extends Component {
     constructor(props) {
@@ -16,7 +16,6 @@ class Comments extends Component {
     render() {
         return (
             <div className='comments-wrapper'>
-                Commented: {this.props.postId}
                 {
                     this.comments.length ?
                         <div className='comments-list'>{
