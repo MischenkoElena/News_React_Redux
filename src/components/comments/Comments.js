@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import Comment from './comment';
+import Comment from './Comment';
 import './comments.scss';
 
 class Comments extends Component {
     constructor(props) {
         super(props);
         this.comments= [];
+    }
+    
+    componentDidMount() {
         fetch('https://jsonplaceholder.typicode.com/comments?postId=' + this.props.postId)
             .then(response => response.json())
             .then(json => {
@@ -13,6 +16,7 @@ class Comments extends Component {
                 this.setState(this.comments);
             });
     }
+    
     render() {
         return (
             <div className='comments-wrapper'>

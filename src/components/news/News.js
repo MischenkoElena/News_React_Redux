@@ -1,25 +1,20 @@
 import React, { Component } from 'react';
-import NewsItem from './news-item';
+import NewsItem from './News-item';
 import './news.scss'
-import Comments from '../comments/comments';
+import Comments from '../comments/Comments';
 
 class News extends Component {
-    constructor() {
-        super();
-        this.news = [];
-        fetch('https://jsonplaceholder.typicode.com/posts')
-            .then(response => response.json())
-            .then(json => {
-                this.news = json;
-                this.setState(this.news);
-            });
+    componentDidMount() {
+        this.props.getNews();
     }
+    
     render() {
+        const { news, fetching } = this.props;
         return (
-            <div className="news-wrapper" key='1nw'>
+            <div className="news-wrapper">
                 {
-                    (this.news.length) ?
-                        this.news.map(
+                    (!fetching) ?
+                        news.map(
                             newItem =>
                                 <div className="news-item-wrapper" key={newItem.id}>
                                     <NewsItem newItem={newItem} />
